@@ -1,6 +1,6 @@
 # api-jwt
 
-NodeJs API implementing authentication using JWTs.
+A nodeJs API that implements authentication via JWTs.
 
 ### Storing Keys
 There is a way to store keys outside of a node application on Heroku. Generate a key and store it in an environment variable 
