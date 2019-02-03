@@ -4,7 +4,6 @@ A nodeJs API that implements authentication via JWTs.
 
 ## Endpoints
 ### Register
-![register](/register.png)
 
 
 ### Storing Keys
