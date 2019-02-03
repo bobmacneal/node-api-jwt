@@ -1,7 +1,7 @@
 {
   "name": "api-jwt",
   "version": "0.0.1",
-  "description": "experiment with api secured by jwt",
+  "description": "Node API secured by jwt",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",

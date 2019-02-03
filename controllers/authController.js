@@ -8,30 +8,28 @@ const bcrypt = require('bcryptjs');
 const config = require('../env.config'); // get config file
 
 router.post('/login', function(req, res) {
-
   User.findOne({ email: req.body.email }, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
     if (!user) return res.status(httpStatus.NOT_FOUND).send(`User not found. email: ${req.body.email}`);
 
     // check if the password is valid
-    var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+    const passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
     if (!passwordIsValid) return res.status(httpStatus.UNAUTHORIZED).send({ auth: false, token: null });
 
     // if user is found and password is valid
     // create a token
-    var token = jwt.sign({ id: user._id }, config.jwtTokenSecret, {
+    const token = jwt.sign({ id: user._id }, config.jwtTokenSecret, {
       expiresIn: 86400 // expires in 24 hours
     });
 
     // return the information including token as JSON
     res.status(httpStatus.OK).send({ auth: true, token: token });
   });
-
 });
 
 router.post('/register', function(req, res) {
 
-  var hashedPassword = bcrypt.hashSync(req.body.password, 8);
+  const hashedPassword = bcrypt.hashSync(req.body.password, 8);
 
   User.create({
       name : req.body.name,
@@ -43,7 +41,7 @@ router.post('/register', function(req, res) {
 
       // if user is registered without errors
       // create a token
-      var token = jwt.sign({ id: user._id }, config.jwtTokenSecret, {
+      const token = jwt.sign({ id: user._id }, config.jwtTokenSecret, {
         expiresIn: 86400 // expires in 24 hours
       });
 
