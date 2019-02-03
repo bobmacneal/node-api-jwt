@@ -1,0 +1,27 @@
+{
+  "name": "api-jwt",
+  "version": "0.0.1",
+  "description": "experiment with api secured by jwt",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "some git name"
+  },
+  "keywords": [
+    "jwt"
+  ],
+  "author": "Bob MacNeal",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.9",
+    "nodemon": "^1.18.9"
+  }
+}
