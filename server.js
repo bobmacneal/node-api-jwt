@@ -1,6 +1,10 @@
-var config = require('./env.config'); // get our config file
+var config = require('./config/index');
 var app = require('./app');
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : config.localHostPort;
+const port = config.port;
 
-// start server
-app.listen(port, () => console.log(`Server is listening on port ${port}`));
+if (config.env === 'development') {
+  app.listen(port, () => console.log(`Listening on port ${port}. Connected to ${config.db}.`));
+} else {
+  app.listen(port);
+}
+

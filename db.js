@@ -1,7 +1,7 @@
-const config = require('./env.config');
+const config = require('./config/index');
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
-mongoose.connect(process.env.MONGODB_URI || config.mongoDbConnectionString,{ useNewUrlParser: true });
+mongoose.connect(config.db,{ useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 module.exports = {

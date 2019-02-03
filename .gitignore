@@ -1,6 +1,8 @@
-node_modules/
-private.key
-public.key
+# dependencies
+/node_modules
+/coverage
+/private.key
+/public.key
 
 # IDE related
 .idea

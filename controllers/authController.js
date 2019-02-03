@@ -5,7 +5,7 @@ const verifyToken = require('../lib/verifyToken');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const config = require('../env.config'); // get config file
+const config = require('../config/index');
 
 router.post('/login', function(req, res) {
   User.findOne({ email: req.body.email }, function (err, user) {
@@ -42,7 +42,7 @@ router.post('/register', function(req, res) {
       // if user is registered without errors
       // create a token
       const token = jwt.sign({ id: user._id }, config.jwtTokenSecret, {
-        expiresIn: 86400 // expires in 24 hours
+        expiresIn: config.jwtTokenLifeInSeconds // expires in 24 hours
       });
 
       res.status(httpStatus.OK).send({ auth: true, token: token });
