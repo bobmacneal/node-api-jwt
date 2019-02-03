@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const httpStatus = require('../httpStatus');
+const httpStatus = require(__root + 'lib/httpStatus');
 const verifyToken = require(__root + 'lib/verifyToken');
 const User = require('../models/User');
 
