@@ -1,20 +1,11 @@
-var express = require('express');
-var router = express.Router();
-// var bodyParser = require('body-parser');
-const httpStatus = require('../httpStatus');
-
-var VerifyToken = require('./VerifyToken');
-
-// router.use(bodyParser.urlencoded({ extended: false }));
-// router.use(bodyParser.json());
-var User = require('../user/User');
-
-/**
- * Configure JWT
- */
-var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
-var bcrypt = require('bcryptjs');
-var config = require('../env.config'); // get config file
+const express = require('express');
+const router = express.Router();
+const httpStatus = require('../lib/httpStatus');
+const verifyToken = require('../lib/verifyToken');
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const config = require('../env.config'); // get config file
 
 router.post('/login', function(req, res) {
 
@@ -61,7 +52,7 @@ router.post('/register', function(req, res) {
 
 });
 
-router.get('/me', VerifyToken, function(req, res, next) {
+router.get('/me', verifyToken, function(req, res, next) {
 
   User.findById(req.userId, { password: 0 }, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);

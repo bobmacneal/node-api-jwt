@@ -1,16 +1,9 @@
-var express = require('express');
-var router = express.Router();
-// var bodyParser = require('body-parser');
+const express = require('express');
+const router = express.Router();
 const httpStatus = require('../httpStatus');
+const verifyToken = require(__root + 'lib/verifyToken');
+const User = require('../models/User');
 
-var VerifyToken = require(__root + 'authentication/VerifyToken');
-
-// router.use(bodyParser.urlencoded({ extended: true }));
-// router.use(bodyParser.json());
-
-var User = require('./User');
-
-// CREATES A NEW USER
 router.post('/', function (req, res) {
   User.create({
       name : req.body.name,
@@ -23,7 +16,6 @@ router.post('/', function (req, res) {
     });
 });
 
-// RETURNS ALL THE USERS IN THE DATABASE
 router.get('/', function (req, res) {
   User.find({}, function (err, users) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
@@ -31,7 +23,6 @@ router.get('/', function (req, res) {
   });
 });
 
-// GETS A SINGLE USER FROM THE DATABASE
 router.get('/:id', function (req, res) {
   User.findById(req.params.id, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
@@ -40,7 +31,6 @@ router.get('/:id', function (req, res) {
   });
 });
 
-// DELETES A USER FROM THE DATABASE
 router.delete('/:id', function (req, res) {
   User.findByIdAndRemove(req.params.id, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
@@ -48,9 +38,8 @@ router.delete('/:id', function (req, res) {
   });
 });
 
-// UPDATES A SINGLE USER IN THE DATABASE
-// Added VerifyToken middleware to make sure only an authenticated user can put to this route
-router.put('/:id', /* VerifyToken, */ function (req, res) {
+// May add verifyToken middleware to make sure only an authenticated user can put to this route
+router.put('/:id', /* verifyToken, */ function (req, res) {
   User.findByIdAndUpdate(req.params.id, {
     $set: { email: req.body.email, name: req.body.name }}, {new:false}, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
