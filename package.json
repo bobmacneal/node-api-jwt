@@ -9,10 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "some git name"
+    "url": "https://github.com/bobmacneal/node-api-jwt"
   },
   "keywords": [
-    "jwt"
+    "auth",
+    "authentication",
+    "express",
+    "jwt",
+    "oauth",
+    "token"
   ],
   "author": "Bob MacNeal",
   "license": "ISC",
