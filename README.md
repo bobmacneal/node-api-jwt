@@ -3,7 +3,20 @@
 A nodeJs API that implements authentication via JWTs.
 
 ## Endpoints
-### Register
+### Register:
+Registers a user. Returns a valid token.
+
+![register new user](/docs/register.png)
+
+### Auth.me
+With a user's _Bearer_ token in the Authorization header, it returns a user object.
+
+![get current user with token](/docs/auth.me.png)
+
+### Login
+Logs in a user. If email and password match those stored, it returns a valid token
+
+![Login to recieve token](/docs/login.png)
 
 
 ### Storing Keys
