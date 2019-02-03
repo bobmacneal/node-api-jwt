@@ -2,6 +2,11 @@
 
 A nodeJs API that implements authentication via JWTs.
 
+## Endpoints
+### Register
+![register](/register.png)
+
+
 ### Storing Keys
 There is a way to store keys outside of a node application on Heroku. Generate a key and store it in an environment variable 
 which can be added with:
