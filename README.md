@@ -1,7 +1,9 @@
 # node-api-jwt
 
-This is scaffolding for a nodeJs API that has authentication via 
-[JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token) (a.k.a, JWTs). 
+This is scaffolding for a nodeJs API that uses  
+[JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token) (a.k.a, JWTs) for authentication. It
+has endpoints to register, identify, and login a User (see _authController.js_) as well as endpoints to create, update, and 
+delete a User (see _userController.js_). 
 
 This example API runs in [Express Js Server](https://expressjs.com/) on your local machine or in a cloud instance. It 
 uses a private-public [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem) key pair for it's token signing _"secret"_. 
