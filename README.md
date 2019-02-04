@@ -61,6 +61,9 @@ Fetches all users.
 
 ![fetch all users](/docs/all.users.png)
 
+The three remaining endpoints in _userController.js_ (e.g., get by id, update, and delete) do not require a JWT token, 
+however in most cases a token would be advisable to protect records from being updated or deleted by an unauthenticated user.
+
 
 # References
 
