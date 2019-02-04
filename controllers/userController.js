@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const httpStatus = require(__root + 'lib/httpStatus');
-const verifyToken = require(__root + 'lib/verifyToken');
 const User = require('../models/User');
 
 router.post('/', function (req, res) {
@@ -38,8 +37,7 @@ router.delete('/:id', function (req, res) {
   });
 });
 
-// May add verifyToken middleware to make sure only an authenticated user can put to this route
-router.put('/:id', /* verifyToken, */ function (req, res) {
+router.put('/:id', function (req, res) {
   User.findByIdAndUpdate(req.params.id, {
     $set: { email: req.body.email, name: req.body.name }}, {new:false}, function (err, user) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
