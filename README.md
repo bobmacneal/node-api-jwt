@@ -48,8 +48,8 @@ Registers a user. Returns a valid token.
 
 ### determine the user behind token:
 With a user's _Bearer_ token submitted in the Authorization header, the API returns a user object.
-
-![get current user with token](/docs/auth.me.png)
+![get current user with token](/docs/auth.me.1.png)
+![get current user with token](/docs/auth.me.2.png)
 
 ### login:
 Logs in a user. If the registered email and password match those stored in MongoDB, the API returns a valid token
@@ -57,6 +57,9 @@ Logs in a user. If the registered email and password match those stored in Mongo
 ![Login to recieve token](/docs/login.png)
 
 ### Users
+Fetches all users.
+
+![fetch all users](/docs/all.users.png)
 
 
 # References
