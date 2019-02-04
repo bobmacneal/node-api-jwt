@@ -33,7 +33,8 @@ of key size slows decryption by ~ 6X).
 invokes [nodemon](https://nodemon.io/) to restart the server following any code updates.
 13. Install an http client like [Insomnia](https://insomnia.rest/), [Postman](https://www.getpostman.com/downloads/), or 
 [Paw](https://paw.cloud/#overview). Paw was used for the screenshots below.
-14. Give it a try!
+14. Give it a try! User your http client, issue a GET request against the URL: `http://localhost:4000/api/v1/`
+The API should return a **_200 OK_** along with  the message **_API v1 running_**.
 
 
 # endpoints
