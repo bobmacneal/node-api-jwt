@@ -1,4 +1,4 @@
-# api-jwt
+# node-api-jwt
 
 This is scaffolding for a nodeJs API that has authentication via 
 [JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token) (a.k.a, JWTs). 
@@ -9,7 +9,7 @@ A User collection is stored in the [community edition](https://docs.mongodb.com/
 of MongoDB running on your local machine or in a cloud instance.
 
 
-# Setup
+# setup
 
 1. From a command shell, **clone** this repo: `git clone https://github.com/bobmacneal/node-api-jwt.git`
 2. From a command shell, **navigate** to the project root: `cd node-api-jwt`
@@ -36,20 +36,20 @@ invokes [nodemon](https://nodemon.io/) to restart the server following any code 
 14. Give it a try!
 
 
-# Endpoints
+# endpoints
 
-### Register:
+### register a new user:
 Registers a user. Returns a valid token.
 
 ![register new user](/docs/register.png)
 
-### Auth.me
-With a user's _Bearer_ token in the Authorization header, it returns a user object.
+### determine the user behind token:
+With a user's _Bearer_ token submitted in the Authorization header, the API returns a user object.
 
 ![get current user with token](/docs/auth.me.png)
 
-### Login
-Logs in a user. If email and password match those stored, it returns a valid token
+### login:
+Logs in a user. If the registered email and password match those stored in MongoDB, the API returns a valid token
 
 ![Login to recieve token](/docs/login.png)
 
