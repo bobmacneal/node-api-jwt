@@ -57,9 +57,11 @@ Registers a user. Returns a valid token.
 ### Determine the user behind token:
 With a user's _Bearer_ token submitted in the Authorization header, the API returns a user object. Note the Bearer token 
 in the authorization header. The word Bearer is combined with the token returned upon registration (e.g., `Bearer eyJhbGciOiJSUzI1NiIsInR...`).
-Also note that your application name should be passed as a URL parameter called application (e.g., application=`application name`
+Also note that your application name should be passed as a URL parameter called application (e.g., application=`application name`)
+
 ![get current user with token](/docs/auth.me.1.png)
 ![get current user with token](/docs/auth.me.2.png)
+
 Posting an application name in the request provides for an extra verification step on the server.
 
 ### Login:
@@ -69,7 +71,9 @@ Logs in a user. If the registered email and password match those stored in Mongo
 
 ### Users
 Fetches all users store in the MongoDB user collection. 
+
 ![fetch all users](/docs/all.users.png)
+
 Note that as a security measure, code was added to the User model to avert including the user's password hash in the response.
 
 The three remaining endpoints in _userController.js_ (e.g., get by id, update, and delete) do not require a JWT token, 
