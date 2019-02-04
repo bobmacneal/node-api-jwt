@@ -57,9 +57,10 @@ Registers a user. Returns a valid token.
 ### Determine the user behind token:
 With a user's _Bearer_ token submitted in the Authorization header, the API returns a user object. Note the Bearer token 
 in the authorization header. The word Bearer is combined with the token returned upon registration (e.g., `Bearer eyJhbGciOiJSUzI1NiIsInR...`).
-Also note that your application name should be passed as a URL parameter called application (e.g., application=`application name`)
 
 ![get current user with token](/docs/auth.me.1.png)
+
+Also note that your application name should be passed as a URL parameter called application (e.g., application=`application name`)
 ![get current user with token](/docs/auth.me.2.png)
 
 Posting an application name in the request provides for an extra verification step on the server.
