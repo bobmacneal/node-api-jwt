@@ -11,11 +11,11 @@ of MongoDB running on your local machine or in a cloud instance.
 
 # Setup
 
-1. From a command shell, **clone** this repo: `git clone https://github.com/bobmacneal/node-api-jwt.git`.
-2. From a command shell, **navigate** to the project root: `cd node-api-jwt`.
-3. From a command shell, **install dependencies**: `npm i`.
-4. From the project root in your command shell, create a new **private key file**: `touch private.key`.
-5. From the project root in your command shell, create a new **public key file**: `touch public.key`.
+1. From a command shell, **clone** this repo: `git clone https://github.com/bobmacneal/node-api-jwt.git`
+2. From a command shell, **navigate** to the project root: `cd node-api-jwt`
+3. From a command shell, **install dependencies**: `npm i`
+4. From the project root in your command shell, create a new **private key file**: `touch private.key`
+5. From the project root in your command shell, create a new **public key file**: `touch public.key`
 6. Generate a 512 bit **RSA private-public key pair [here](http://travistidwell.com/jsencrypt/demo/)**. Be sure to set
 the key size to _512 bit_ before clicking Generate (Note that a larger key would be tougher to crack, but every doubling 
 of key size slows decryption by ~ 6X).
