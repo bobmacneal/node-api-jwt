@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
   User.find({}, function (err, users) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
     res.status(httpStatus.OK).send(users);
-  });
+  }).select('-password -__v').sort({name: 1});
 });
 
 router.get('/:id', function (req, res) {
@@ -27,7 +27,7 @@ router.get('/:id', function (req, res) {
     if (err) return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(`Server error: ${err.message}`);
     if (!user) return res.status(httpStatus.NOT_FOUND).send('User not found');
     res.status(httpStatus.OK).send(user);
-  });
+  }).select('-password -__v');
 });
 
 router.delete('/:id', function (req, res) {
