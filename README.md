@@ -1,6 +1,6 @@
 # node-api-jwt
 
-This is a scaffolding template for a nodeJs API that uses [JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token) 
+**node-api-jwt** is a scaffolding template for a nodeJs API that uses [JSON Web Tokens](https://en.wikipedia.org/wiki/JSON_Web_Token) 
 (a.k.a, JWTs) for authentication. 
 
 The API provides example endpoints to register, identify, and login a User (see _authController.js_) as well as endpoints 
