@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const db = require('./db');
+require('./db');
 global.__root   = __dirname + '/';
 const httpStatus = require('./lib/httpStatus')
 const bodyParser = require('body-parser')
