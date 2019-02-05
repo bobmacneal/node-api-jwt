@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const httpStatus = require(__root + 'lib/httpStatus');
+const httpStatus = require('lib/httpStatus');
 const User = require('../models/User');
 
 router.post('/', function (req, res) {

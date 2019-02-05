@@ -27,7 +27,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.9"
+    "mongoose": "^5.4.9",
+    "rootpath": "^0.1.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
