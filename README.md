@@ -87,3 +87,4 @@ however in most cases a token would be advisable to protect records from being u
 
 - [Securing Node.js RESTful APIs with JSON Web Tokens](https://medium.freecodecamp.org/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52).  
 - [JSON Web Token (JWT) — The right way of implementing, with Node.js](https://medium.com/@siddharthac6/json-web-token-jwt-the-right-way-of-implementing-with-node-js-65b8915d550e).
+- [JWT](https://jwt.io/) - debugger / decoder
